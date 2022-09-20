@@ -5,6 +5,7 @@ metadata:
 spec:
   selector:
     app.kubernetes.io/name: memgraph
+  type: NodePort
   ports:
     - protocol: TCP
       name: "7474"
