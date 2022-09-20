@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: memgraph
+  namespace: memgraph
+  labels:
+    app: memgraph
+spec:
+  selector:
+    matchLabels:
+      app: memgraph
+  template:
+    metadata:
+      labels:
+        app: memgraph
+    spec:
+      volumes:
+        - name: data
+          hostPath:
+            path: /disk1/memgraph
+      containers:
+      - name: memgraph
+        image: memgraph/memgraph-platform
+        volumeMounts:
+          - mountPath: /var/lib/memgraph/
+            name: data
