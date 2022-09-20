@@ -1,3 +1,4 @@
+namespace: memgraph
 resources:
 - namespace.yaml
 - deployment.yaml

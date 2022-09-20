@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: kmemgraph
+  name: memgraph
 spec:
   selector:
-    app.kubernetes.io/name: kmemgraph
+    app.kubernetes.io/name: memgraph
   ports:
     - protocol: TCP
       name: "7474"
