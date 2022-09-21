@@ -19,7 +19,17 @@ spec:
             path: /disk1/memgraph
       containers:
       - name: memgraph
-        image: memgraph/memgraph-platform
+        image: memgraph/memgraph:latest
+        ports:
+          - containerPort: 7474
+          - containerPort: 3000
+          - containerPort: 7687
+        #tty: true
+        #stdin: true
+        #command:
+        #  - sleep
+        #  - infinity
+
         volumeMounts:
           - mountPath: /var/lib/memgraph/
             name: data

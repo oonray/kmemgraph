@@ -4,14 +4,17 @@ metadata:
   name: memgraph
 spec:
   selector:
-    app.kubernetes.io/name: memgraph
+    app: memgraph
   type: NodePort
   ports:
     - protocol: TCP
       name: "7474"
       port: 7474
-      targetPort: 7474
+
     - protocol: TCP
       name: "3000"
       port: 3000
-      targetPort: 3000
+
+    - protocol: TCP
+      name: "7687"
+      port: 7687
